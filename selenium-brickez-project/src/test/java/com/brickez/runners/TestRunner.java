@@ -1,13 +1,15 @@
-package com.example.runners;
+package com.brickez.runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "com.example.stepdefinations",
+        glue = "com.brickez",
         plugin = {
-                "pretty"
+                "pretty",
+                "html:target/cucumber-report.html",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         monochrome = true
 )
